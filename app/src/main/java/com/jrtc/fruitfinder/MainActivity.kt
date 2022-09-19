@@ -1,6 +1,5 @@
 package com.jrtc.fruitfinder
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.jrtc.fruitfinder.adapter.FruitCardAdapter
@@ -12,13 +11,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Setup view binding
+        // Sets up view binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Sets up recycler view
         binding.gridRecyclerView.adapter = FruitCardAdapter(applicationContext)
 
-        // Specify fixed size to improve performance
+        // Specifies fixed size to improve performance
         binding.gridRecyclerView.setHasFixedSize(true)
     }
 

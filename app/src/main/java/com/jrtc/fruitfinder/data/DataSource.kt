@@ -26,6 +26,10 @@ object DataSource {
             "Blackberries"
         ),
         Fruit(
+            R.drawable.blueberries,
+            "Blueberries"
+        ),
+        Fruit(
             R.drawable.cherries,
             "Cherries"
         ),
@@ -85,8 +89,6 @@ object DataSource {
             R.drawable.watermelon,
             "Watermelon"
         ),
-
-
-        )
+    )
 
 }

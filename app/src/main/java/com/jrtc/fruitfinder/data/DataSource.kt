@@ -88,7 +88,7 @@ object DataSource {
         Fruit(
             R.drawable.watermelon,
             "Watermelon"
-        ),
+        )
     )
 
 }

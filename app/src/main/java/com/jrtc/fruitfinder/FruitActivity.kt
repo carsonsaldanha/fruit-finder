@@ -26,7 +26,10 @@ class FruitActivity : AppCompatActivity() {
 
         val strName = intent.getStringExtra("name")
 
+        val fruitImageId = intent.getIntExtra("image", 0)
+
         binding.textView.text = strName
+        binding.fruitImage.setImageResource(fruitImageId)
     }
 
 }

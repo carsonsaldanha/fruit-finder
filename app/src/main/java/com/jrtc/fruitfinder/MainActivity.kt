@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private fun adapterOnClick(fruit: Fruit) {
         val intent = Intent(this, FruitActivity()::class.java)
         intent.putExtra("name", fruit.name)
+        intent.putExtra("image", fruit.imageResourceId)
         startActivity(intent)
     }
 

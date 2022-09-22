@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("cholesterol", fruit.cholesterol)
         intent.putExtra("sodium", fruit.sodium)
         intent.putExtra("potassium", fruit.potassium)
-        intent.putExtra("total carbohydrates", fruit.totalCarbohydrate)
+        intent.putExtra("total carbohydrate", fruit.totalCarbohydrate)
         intent.putExtra("protein", fruit.protein)
         intent.putExtra("vitamin c", fruit.vitaminC)
         intent.putExtra("calcium", fruit.calcium)

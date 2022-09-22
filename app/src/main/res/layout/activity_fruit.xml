@@ -1,60 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/fruit_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Display Text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="48sp"
-        />
-
-    <ImageView
-        android:id="@+id/fruit_image"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="194dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fruit_name"
-        tools:srcCompat="@drawable/apple" />
+        android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/fruit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Apple" />
 
-    <TextView
-        android:id="@+id/quantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/quantityString"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fruit_image"
-        android:padding="5dp"
-        android:textSize="25sp" />
+        <ImageView
+            android:id="@+id/fruit_image"
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+            android:contentDescription="@string/fruit_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fruit_name"
+            tools:srcCompat="@drawable/apple" />
 
-    <EditText
-        android:id="@+id/input_quantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/fruit_image"
-        app:layout_constraintStart_toEndOf="@id/quantity"
-        android:hint="@string/number_of_fruits"
-        android:padding="5dp"
-        android:textSize="25sp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/quantity_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fruit_image">
 
-    <TextView
-        android:id="@+id/fruit_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/fruit_image"
-        app:layout_constraintStart_toEndOf="@id/input_quantity"
-        tools:text="medium peach(es)"
-        android:paddingTop="10dp"
-        android:paddingLeft="7dp"
-        android:textSize="15sp"/>
+            <TextView
+                android:id="@+id/quantity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/quantity_label"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/input_quantity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/input_quantity" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_quantity"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:hint="@string/number_of_fruits"
+                app:layout_constraintStart_toEndOf="@id/quantity_label"
+                app:layout_constraintTop_toTopOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_quantity_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/input_quantity"
+                app:layout_constraintStart_toEndOf="@+id/input_quantity"
+                app:layout_constraintTop_toTopOf="@+id/input_quantity"
+                tools:text="medium apple(s)" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/nutritional_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/nutritional_information"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/quantity_layout" />
+
+        <TextView
+            android:id="@+id/calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/calories"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nutritional_information" />
+
+        <TextView
+            android:id="@+id/total_fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_fat"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calories" />
+
+        <TextView
+            android:id="@+id/cholesterol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cholesterol"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_fat" />
+
+        <TextView
+            android:id="@+id/sodium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sodium"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cholesterol" />
+
+        <TextView
+            android:id="@+id/potassium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/potassium"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sodium" />
+
+        <TextView
+            android:id="@+id/total_carbohydrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_carbohydrate"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/potassium" />
+
+        <TextView
+            android:id="@+id/protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/protein"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_carbohydrate" />
+
+        <TextView
+            android:id="@+id/vitamin_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vitamin_c"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/protein" />
+
+        <TextView
+            android:id="@+id/calcium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calcium"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vitamin_c" />
+
+        <RadioGroup
+            android:id="@+id/store_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:checkedButton="@id/heb"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calcium">
+
+            <RadioButton
+                android:id="@+id/heb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/heb" />
+
+            <RadioButton
+                android:id="@+id/kroger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/kroger" />
+
+            <RadioButton
+                android:id="@+id/walmart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/walmart" />
+
+            <RadioButton
+                android:id="@+id/whole_foods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/whole_foods" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/buy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/store_options" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

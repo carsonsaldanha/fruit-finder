@@ -37,7 +37,20 @@ class MainActivity : AppCompatActivity() {
     private fun adapterOnClick(fruit: Fruit) {
         val intent = Intent(this, FruitActivity()::class.java)
         intent.putExtra("name", fruit.name)
+        intent.putExtra("quantity", fruit.quantity)
         intent.putExtra("image", fruit.imageResourceId)
+        intent.putExtra("calories", fruit.calories)
+        intent.putExtra("total fat", fruit.totalFat)
+        intent.putExtra("cholesterol", fruit.cholesterol)
+        intent.putExtra("sodium", fruit.sodium)
+        intent.putExtra("potassium", fruit.potassium)
+        intent.putExtra("total carbohydrates", fruit.totalCarbohydrate)
+        intent.putExtra("protein", fruit.protein)
+        intent.putExtra("vitamin c", fruit.vitaminC)
+        intent.putExtra("calcium", fruit.calcium)
+
+
+
         startActivity(intent)
     }
 

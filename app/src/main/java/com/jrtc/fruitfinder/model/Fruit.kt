@@ -6,12 +6,13 @@ import androidx.annotation.DrawableRes
 data class Fruit(
     @DrawableRes val imageResourceId: Int,
     val name: String,
+    val quantity: String,
     val calories: Int,
     val totalFat: Double,
     val cholesterol: Int,
     val sodium: Int,
     val potassium: Int,
-    val totalCarbohydrate: Int,
+    val totalCarbohydrate: Double,
     val protein: Double,
     val vitaminC: Int,
     val calcium: Int

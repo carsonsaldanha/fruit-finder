@@ -48,8 +48,9 @@ class FruitActivity : AppCompatActivity() {
 
         val calcium = intent.getIntExtra("calcium", 0)
 
-        binding.textView.text = strName
+        binding.fruitName.text = strName
         binding.fruitImage.setImageResource(fruitImageId)
+        binding.fruitDescription.text = quantity
     }
 
 }

@@ -5,26 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/fruit_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="48sp"
+        />
+
     <ImageView
         android:id="@+id/fruit_image"
         android:layout_width="match_parent"
         android:layout_height="194dp"
-        android:layout_marginTop="4dp"
-        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fruit_name"
         tools:srcCompat="@drawable/apple" />
 
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Display Text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:text="@string/quantityString"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fruit_image"
-        app:layout_constraintVertical_bias="0.424" />
+        app:layout_constraintTop_toBottomOf="@id/fruit_image"
+        android:padding="5dp"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/input_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruit_image"
+        app:layout_constraintStart_toEndOf="@id/quantity"
+        android:hint="@string/number_of_fruits"
+        android:padding="5dp"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/fruit_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruit_image"
+        app:layout_constraintStart_toEndOf="@id/input_quantity"
+        tools:text="medium peach(es)"
+        android:paddingTop="10dp"
+        android:paddingLeft="7dp"
+        android:textSize="15sp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
